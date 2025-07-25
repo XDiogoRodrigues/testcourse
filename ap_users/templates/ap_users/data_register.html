@@ -1,0 +1,52 @@
+{% load static %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-10 mt-5 container-img text-center">
+                <img src="{% static 'images/desktop.webp' %}" alt="logo cadastro" class="image img-fluid text-center me-5">
+            </div>
+
+            <div class="col-lg-5 col-12 mt-5 container-login">
+                <form action="" method="post">
+                    {% csrf_token %}
+
+                    <fieldset>
+                        <legend class="fw-bold mb-4 fs-1">Cadastrar-se com e-mail</legend>
+                        <div class="form-floating col-12 mb-3">
+                            <input type="text" name="name_full" id="floatingInput" class="form-control" placeholder="Nome completo" required>
+                            <label for="floatingInput" class="fw-bold">Nome completo</label>
+                        </div>
+        
+                        <div class="form-floating col-12 mb-3">
+                            <input type="email" name="email" id="email" class="form-control" placeholder="E-mail" required>
+                            <label for="email" class="fw-bold">E-mail</label>
+                        </div>
+    
+                        <div class="form-floating col-12 mb-3">
+                            <input type="password" name="password" id="password" class="form-control" placeholder="Senha" required>
+                            <label for="password" class="fw-bold">Senha</label>
+                        </div>
+        
+                        <div class="form-check col-12 mb-3">
+                            <input type="checkbox" name="check" id="check" class="form-check-input" checked>
+                            <label for="check">Quero receber ofertas especiais, recomendações personalizadas e dicas de aprendizado</label>
+                        </div>         
+    
+                        <div class="col-lg-11 col-12">
+                            <input type="submit" value="Criar Login" class="btn btn-primary p-3 w-100">
+                        </div>
+                    </fieldset>            
+                </form> 
+                <p class="text-center mt-4 fw-bold">Outras opções de inscrição</p>
+
+                <div class="container-options d-flex justify-content-center mb-4">
+                    <a href="#" class="me-4"><img src="{% static 'images/google.ico' %}" class="p-2" alt="" width="45px" height="45px"></a>
+                    <a href="#" class="me-4"><img src="{% static 'images/fb.ico' %}" class="p-2" alt="" width="45px" height="45px"></a>
+                    <a href="#" class="me-4"><img src="{% static 'images/mac.ico' %}" class="p-2" alt="" width="45px" height="45px"></a>
+                </div>
+
+                <p class="mb-5 text-center">Ao se inscrever, você concorda com nossos <a href="#">Termos de Uso</a> e com a <a href="#">Política de Privacidade</a>.</p>
+
+                <p class="text-center fs-5">Já tem uma conta? <a href="{% url 'login' %}">Fazer login</a></p>
+            </div>
+        </div>
+    </div>

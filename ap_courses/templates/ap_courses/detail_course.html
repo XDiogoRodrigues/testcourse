@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}<link rel="stylesheet" href="{% static 'css/styles-courses.css' %}">{% endblock %}
+{% block media_query %}<link rel="stylesheet" href="{% static 'css/medias-query-courses.css' %}">{% endblock %}
+{% block script %} <script src="{% static 'js/script-courses.js' %}" defer></script>{% endblock %}
+{% block image %}<link rel="shortcut icon" type="imagex/png" href="{{course.image.url}}">{% endblock %}
+{% block content %}
+    {% include 'main.html' %}
+    <div class="container-fluid text-center bg-dark text-white">
+        <div class="row justify-content-center mb-5">
+            <h1 class="text-center">{{course}}</h1>
+        </div>
+        <img src="{{course.image.url}}" alt="{{course.name}}" width="300px" height="300px">
+    </div>
+
+    <div class="container bg-primary">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid assumenda quo illum nihil vero similique consectetur, et dolore hic animi!</p>
+    </div>
+{% endblock%}

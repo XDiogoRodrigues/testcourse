@@ -1,0 +1,32 @@
+{% load static %}
+    <div class="container-fluid bg-dark container-carousel pt-4 pb-4">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">  
+            <div class="carousel-inner text-center">
+            {% for course_new in courses_news %}
+            <div class="carousel-item" data-bs-interval="3000">
+                <a href="{% url 'detail' course_new.slug %}" class="d-block text-decoration-none" target="_blank">
+                    <!-- <h1 class="text-white text-center " style="letter-spacing: 8px;">Novidade</h1>  -->
+                    <div class="container-geral d-flex justify-content-center align-items-center">
+                        <img src="{% static 'images/novo-8.png' %}" alt="logo-novo" width="100px" height="100px">
+                        <img src="{{course_new.image.url}}" class="img-fluid me-4">
+                        <div class="container-data bg-white rounded-3 w-50 p-4">
+                            <p class="text-dark fs-4 fw-bold w-100 mb-0">{{course_new.name}}.</p>
+                            <p class="text-dark fs-4 fw-bold w-100 mb-0"><i>{{course_new.description_short}}</i></p>
+                            <p class="text-dark fs-4 fw-bold mb-0">R$ {{course_new.price}}</p>
+                        </div>
+                    </div>                                     
+                </a>    
+            </div>
+            {% endfor %}
+           
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>

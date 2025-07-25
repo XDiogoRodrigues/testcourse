@@ -1,0 +1,165 @@
+.container-login {
+    padding-top: 50px;
+}
+
+.form-floating .form-control {
+    border-radius: 5px;
+}
+
+.form-floating .form-control:focus{
+    box-shadow: none;
+    border: 1px solid rgb(110, 46, 150);;
+   
+}
+
+input[type='submit'] {
+    letter-spacing: 1px;
+    background-color: rgb(110, 46, 150);
+    border-color: rgb(110, 46, 150);
+}
+
+input[type='submit']:hover {
+    background-color: rgb(110, 46, 150);
+    border-color: rgb(110, 46, 150);
+
+}
+
+.form-floating .form-check-input:active{
+    background-color: rgb(110, 46, 150) ;
+    box-shadow: rgb(110, 46, 150);
+    border: 1px solid rgb(110, 46, 150);;
+   
+}
+
+.form-check-input:checked {
+    box-shadow: none;
+    background-color: rgb(110, 46, 150);
+    border-color: rgb(110, 46, 150);
+}
+
+.form-check-input .active {
+    box-shadow: none;
+    background-color: rgb(110, 46, 150);
+    border-color: rgb(110, 46, 150);
+}
+
+.form-check-input:checked {
+    box-shadow: none;
+    background-color: rgb(110, 46, 150);
+    border-color: rgb(110, 46, 150);
+}
+
+
+.form-check-input:focus{
+    box-shadow: none;
+    background-color: rgb(110, 46, 150);
+    border-color: rgb(110, 46, 150);
+}
+
+.container-options img {
+    border: 1px solid rgb(110, 46, 150) ;
+    border-radius: 5px;
+}
+
+.col-lg-5 legend {
+    text-align: start;
+}
+
+
+p a {
+    color: rgb(110, 46, 150);
+    text-decoration: none;
+}
+
+p a:hover {
+    color: rgb(42, 4, 66);
+}
+
+* {
+    padding:0;
+    margin:0;
+    vertical-align:baseline;
+    list-style:none;
+    border:0
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: whitesmoke;
+}
+
+.container-desktop {
+    background-color: white;
+    border-bottom: 2px solid white;
+    box-shadow: 5px 5px 5px whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.container-desktop .btn {
+    border: 1px solid;
+    border-color: rgb(110, 46, 150);
+    background-color: white;
+    color: rgb(110, 46, 150);
+    transition: 400ms;
+    font-weight: bold;
+    padding: 10px 15px;
+    
+}
+
+.container-desktop .btn:hover {
+    background-color: rgb(110, 46, 150);
+    color: white;
+}
+
+.container-mobile {
+    display: none;
+}
+
+.container-mobile .bi-list {
+    padding: 2px;
+
+}
+
+.container-mobile .bi-list:hover {
+    background-color: rgb(190, 190, 190);
+    border-radius: 15px;
+}
+
+.ps-5 {
+    margin-left: 120px;
+}
+
+.container-content {
+    transition: 800ms;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.container-content:hover {
+    background-color: rgb(227, 237, 237);
+    
+}
+
+
+.list {
+    list-style-type: none;
+}
+
+.nav-link-my {
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+
+.container-search .form-control {
+    border-radius: 50px;
+}
+
+.col-md-2 .btn {
+    border-radius: 15px;
+    letter-spacing: 1.5px;
+    
+}

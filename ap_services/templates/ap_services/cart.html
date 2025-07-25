@@ -1,0 +1,63 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block style %}<link rel="stylesheet" href="{% static 'css/styles-services.css' %}">{% endblock %}
+{% block media_query %}<link rel="stylesheet" href="{% static 'css/medias-query-services.css' %}">{% endblock %}
+{% block script %} <script src="{% static 'js/script-services.js' %}" defer></script>{% endblock %}
+{% block content %}
+    {% include 'nav_header.html' %}
+    <div class="container-fluid container-cart">
+        <div class="row justify-content-center">
+            <h1 class="text-center mt-5">Carrinho de compras</h1>
+            {% if quantity > 1 %}
+                <p class="fs-3 text-center fw-bold"><b>{{quantity}}</b> Cursos no carrinho.</p>
+                <h2 class="text-center bg-secondary p-3 w-50 mb-4 rounded-3 text-white fw-bold" id="value_total">Valor Total: R$ {{value_total}}</h2>
+                <a href="#" class="btn btn-primary fs-4 w-75 mb-4 fw-bold">Prosseguir com a finalização <i class="bi bi-arrow-right"></i></a>
+                <hr>
+                {% for course in courses %}
+                    <div class="col-lg-8 col-10 d-flex align-items-start p-2 mb-4">
+                        <img src="{{course.image.url}}" alt="{{course.name}}" width="90px" height="90px">
+
+                        <div class="container-course-data ms-3">
+                            <h3>{{course.name}}</h3>
+                            <p class="mb-0 fw-bold">{{course.description_short}}</p>
+                            <p class="fw-bold fs-5 mb-2">R$ {{course.price}}</p>
+
+                            <div class="container-actions-course mb-2">
+                                <a href="{% url 'detail' course.slug %}" class="btn btn-primary me-2" target="_blank">Detalhe</a>
+                                <a href="{% url 'remove' course.slug %}" class="btn btn-danger">Remove</a>
+                            </div>
+                        </div>        
+                    </div>   
+                {% endfor %}     
+            {% elif quantity == 1 %}
+                <p class="fs-3 text-center fw-bold"><b>{{quantity}}</b> Curso no carrinho.</p>
+                <h2 class="text-center bg-secondary p-3 w-50 mb-4 rounded-3 text-white fw-bold" id="value_total">Valor Total: R$ {{value_total}}</h2>
+                <a href="#" class="btn btn-primary fs-4 w-75 mb-4 fw-bold">Prosseguir com a finalização <i class="bi bi-arrow-right"></i></a>
+                <hr>
+                {% for course in courses %}
+                    <div class="col-lg-8 col-10 d-flex align-items-start p-2 mb-4">
+                        <img src="{{course.image.url}}" alt="{{course.name}}" width="90px" height="90px">
+
+                        <div class="container-course-data ms-3">
+                            <h3>{{course.name}}</h3>
+                            <p class="mb-0 fw-bold">{{course.description_short}}</p>
+                            <p class="fw-bold fs-5 mb-2">R$ {{course.price}}</p>
+
+                            <div class="container-actions-course mb-2">
+                                <a href="{% url 'detail' course.slug %}" class="btn btn-primary me-2" target="_blank">Detalhe</a>
+                                <a href="{% url 'remove' course.slug %}" class="btn btn-danger">Remove</a>
+                            </div>
+                        </div>        
+                    </div>   
+                {% endfor %}     
+
+            {% else %}
+            <p class="text-center fs-3 fw-bold">Seu carrinho está vazio <i class="bi bi-emoji-frown"></i></p>
+            <a href="{% url 'home' %}" class="btn btn-primary btn-cart w-50 mb-4">Continuar Comprando</a>
+            <hr>
+
+            {% endif %}     
+                       
+        </div>     
+    </div>
+{% endblock %}

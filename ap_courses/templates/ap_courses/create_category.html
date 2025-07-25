@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}<link rel="stylesheet" href="{% static 'css/styles-courses.css' %}">{% endblock %}
+{% block media_query %}<link rel="stylesheet" href="{% static 'css/medias-query-courses.css' %}">{% endblock %}
+{% block script %} <script src="{% static 'js/script-courses.js' %}" defer></script>{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-11">
+                <form action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <fieldset>
+                        <legend class="text-center">Cadastro de Categoria</legend>
+                        {% for message in messages %}
+                            {% if message.level == 25 %}
+                                <div class="alert alert-success alert-dismissible" role="alert">
+                                    <p class="fs-5 mt-3 text-center">{{message}}</p>
+                                    <button class="btn-close" data-bs-dismiss="alert"></button>
+                                </div>
+                            {% else %}
+                                <div class="alert alert-danger alert-dismissible" role="alert">
+                                    <p class="fs-5 mt-3 text-center">{{message}}</p>
+                                    <button class="btn-close" data-bs-dismiss="alert"></button>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                        <label for="name_category" class="form-label fw-bold">Categoria</label>
+                        <input type="text" name="name" id="name_category" class="form-control mb-4">
+    
+                        <input type="submit" value="Cadastrar" class="btn btn-primary">
+                    </fieldset>              
+                </form>
+            </div>
+        </div>
+    </div>
+   
+{% endblock %}

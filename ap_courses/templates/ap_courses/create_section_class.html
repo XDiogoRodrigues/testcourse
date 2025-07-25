@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}<link rel="stylesheet" href="{% static 'css/styles-courses.css' %}">{% endblock %}
+{% block media_query %}<link rel="stylesheet" href="{% static 'css/medias-query-courses.css' %}">{% endblock %}
+{% block script %} <script src="{% static 'js/script-courses.js' %}" defer></script>{% endblock %}
+{% block content %}
+    <div class="container">
+        <h1 class="text-center mb-4">Cadastro Seção e Aulas</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-11">
+                <div class="col-md-4 col-11 mb-3">
+                    <a href="{% url 'create_course' %}" class="text-decoration-none btn btn-success">Criar um novo curso</a>
+                </div>
+                <form action="" method="post" enctype="multipart/form-data">
+                    {% for message in messages %}
+                        {% if message.level == 25 %}
+                            <div class="alert alert-success alert-dismissible fade show fs-5 mt-3 text-center" role="alert">
+                                <p class="fs-5 mt-3 text-center">{{message}}</p>
+                                <button class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        {% else %}
+                            <div class="alert alert-danger alert-dismissible fs-5 mt-3 text-center" role="alert">
+                                <p class="fs-5 mt-3 text-center">{{message}}</p>
+                                <button class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    {% csrf_token %}
+                    <label for="name_section" class="form-label fw-bold fs-5">Nome da Seção</label>
+                    <input type="text" name="name_section" id="name_section" class="form-control mb-3">
+
+                    <label for="course" class="form-label fw-bold fs-5 ">Qual curso será inserido essa seção?</label>
+                    <select class="form-select mb-3" name="course" aria-label="Default select example">
+                        <option selected>Menu de Cursos</option>
+                        {% for course in courses %}
+                            <option value="{{course}}">{{course.name}}</option>
+                        {% endfor %}
+                    </select>
+
+                    <label for="classes" class="form-label fw-bold">Aulas</label>
+                    <input type="text" name="classes" id="classes" class="form-control mb-3">
+
+                    <input type="submit" value="Cadastrar" class="btn btn-primary text-uppercase" id="classes">
+
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

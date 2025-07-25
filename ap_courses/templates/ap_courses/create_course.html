@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}<link rel="stylesheet" href="{% static 'css/styles-courses.css' %}">{% endblock %}
+{% block media_query %}<link rel="stylesheet" href="{% static 'css/medias-query-courses.css' %}">{% endblock %}
+{% block script %} <script src="{% static 'js/script-courses.js' %}" defer></script>{% endblock %}
+{% block content %}
+    <div class="container">
+        <h1 class="text-center mb-4">Cadastro de Curso</h1>
+        <div class="row justify-content-center">          
+            <div class="col-md-6 col-11">
+                <div class="col-md-4 col-11 mb-3">
+                    <a href="{% url 'create_section' %}" class="text-decoration-none btn btn-success">Criar uma nova seção</a>
+                </div>
+              
+                <form action="" method="post" enctype="multipart/form-data">
+                    {% for message in messages %}
+                    {% if message.level == 25 %}
+                        <div class="alert alert-success alert-dismissible fs-5 mt-3 text-center" role="alert">
+                            <p class="fs-5 mt-3 text-center">{{message}}</p>
+                            <button class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    {% else %}
+                        <div class="alert alert-danger alert-dismissible" role="alert">
+                            <p class="fs-5 mt-3 text-center">{{message}}</p>
+                            <button class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    {% endif %}
+                    {% endfor %}
+                    
+                    {% csrf_token %}
+                   <label for="name" class="form-label fw-bold">Nome do Curso</label>
+                   <input type="text" class="form-control mb-2" id="name_course" name="name" required>
+                    
+                   <label for="category" class="form-label fw-bold fs-5 ">Qual Categoria?</label>
+                   <select class="form-select mb-3" name="subcategory" aria-label="Default select example" required>
+                       <option selected>Menu de Categoria</option>
+                       {% for subcategory in subcategories %}
+                           <option value="{{subcategory}}">{{subcategory.name}}</option>
+                       {% endfor %}
+                   </select>
+
+                   <label for="description" class="form-label fw-bold">Descrição Básica</label>
+                   <input type="text" name="description_short" id="description" class="form-control mb-2" required>
+                   
+                   <label class="form-label fw-bold">Descrição Detalhada</label>
+                   <textarea name="detailed_description"  cols="10" rows="10" class="form-control mb-2" style="resize: none;" required></textarea>
+
+                   <div class="form-check col-12 mb-3">
+                        <input type="checkbox" name="news" id="check" class="form-check-input" checked>
+                        <label for="check">Novidade?</label>
+                   </div>
+                   
+                   <label for="video" class="form-label">Video de apresentação</label>
+                   <input type="file" name="video" id="video" class="form-control mb-2" required>
+                   
+                   <label for="price" class="form-label fw-bold">Preço</label>
+                   <input type="text" name="price" id="price" class="form-control mb-2" required>
+
+                   <label for="level" class="form-label fw-bold mb-2">Nível</label>
+                   <input type="text" name="level" id="level" class="form-control mb-2" required>
+
+                   <label for="image" class="form-label fw-bold">Arquivo Imagem</label>
+                   <input type="file" name="image" id="image" class="form-control mb-2" required>
+
+                   <label for="name_teacher" class="form-label fw-bold">Nome do Professor</label>
+                   <input type="text" name="name_teacher" id="name_teacher" class="form-control mb-3" required>
+             
+                   <input type="submit" value="cadastrar" class="btn btn-primary text-uppercase mb-5" required>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

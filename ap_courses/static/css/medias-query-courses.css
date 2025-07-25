@@ -1,0 +1,57 @@
+@media (max-width: 765px){
+
+    h4 {
+        text-align: center;
+    }
+    .container-data p {
+        text-align: center;
+    }
+
+    a img  {
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+
+    a p {
+        text-align: center;
+    }
+
+    .container-actions {
+        text-align: center;
+    }
+}
+
+@media(max-width: 767px){
+    .ps-5 {
+        margin-left: -20px;
+    }
+}
+
+@media(max-width: 377px){
+    .btn-buy {
+        margin-bottom: 20px;
+    }
+}
+
+
+@media(max-width: 1150px){
+
+    .container-categories {
+        display: none;
+    }
+
+    .container-carousel{
+        display: none;
+    }
+
+    .container-desktop {
+        display: none;
+    }
+    
+    .container-mobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+

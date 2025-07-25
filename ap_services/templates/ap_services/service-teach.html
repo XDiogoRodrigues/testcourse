@@ -1,0 +1,211 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block style %}<link rel="stylesheet" href="{% static 'css/styles-services.css' %}">{% endblock %}
+{% block media_query %}<link rel="stylesheet" href="{% static 'css/medias-query-services.css' %}">{% endblock %}
+{% block script %} <script src="{% static 'js/script-services.js' %}" defer></script>{% endblock %}
+{% block content %}
+    {% include 'nav_header.html' %}
+    <div class="container-teach d-flex">
+        <img src="{% static 'images/billboard.webp' %}" alt="Moça" class="img-fluid">
+        <div class="container-teach-actions text-center">
+            <h1>Venha dar aulas conosco</h1>
+            <p class="mb-3">Torne-se instrutor e comece a mudar vidas - incluindo a sua</p>
+            <a href="#" class="btn btn-primary btn-teach w-100">Começar agora</a>
+        </div>
+    </div>
+
+    <div class="container-teach-actions-2 text-center mt-4">
+            <h1>Venha dar aulas conosco</h1>
+            <p class="mb-3">Torne-se instrutor e comece a mudar vidas - incluindo a sua</p>
+            <a href="#" class="btn btn-primary btn-teach w-75">Começar agora</a>
+    </div>
+    
+    <div class="container-fluid container-fluid-service text-center">
+        <h1 class="mt-5 title">São muitos motivos para começar</h1>
+
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-11 mt-5 container-actions-teach">
+                <div class="container-action me-5 ms-5 ">
+                    <img src="{% static 'images/image-teach.webp' %}" alt="logo ensinar">
+                    <p class="fw-bold fs-4">Seu jeito de ensinar</p>
+                    <p class="fs-5">Publique o curso que você quer, da maneira que achar melhor e sempre tenha controle do seu conteúdo.</p>
+                </div>
+
+                <div class="container-action me-5 ms-5">
+                    <img src="{% static 'images/image-inspire.webp' %}" alt="logo ensinar">
+                    <p class="fw-bold fs-4">Inspire alunos</p>
+                    <p class="fs-5">Ensine o que você sabe e ajude os alunos a explorar seus interesses, adquirir novas habilidades e avançar na carreira.</p>
+                </div>
+
+                <div class="container-action me-5 ms-5">
+                    <img src="{% static 'images/image-reward.webp' %}" alt="logo ensinar">
+                    <p class="fw-bold fs-4">Receba recompensas</p>
+                    <p class="fs-5">Amplie sua rede profissional, desenvolva seu conhecimento e ganhe dinheiro com cada inscrição paga.</p>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+
+    <div class="container-fluid container-fluid-data d-flex justify-content-center align-items-center text-center">
+        <div class="container-my d-flex">
+            <div class="container-my-1">
+                <span class=" text-white principle">73</span>
+                <span class=" text-white fs-3">milhões</span>
+                <span class=" text-white fs-4">Alunos</span>
+            </div>
+            
+            <div class="container-my-1">
+                <span class="text-white principle">75+</span>
+                <span class="text-white fs-4">Idiomas</span>
+            </div>
+            
+            <div class="container-my-1">
+                <span class=" text-white principle">1 bilhão</span>
+                <span class=" text-white fs-4">Inscrições</span>
+            </div>
+            
+            <div class="container-my-1">
+                <span class=" text-white principle">180+</span>
+                <span class=" text-white fs-4">Países</span>
+            </div>
+
+            <div class="container-my-1 ">
+                <span class=" text-white principle">16.000+</span>
+                <span class=" text-white fs-4">Clientes empresariais</span>
+            </div>
+        </div>     
+    </div>
+
+    <div class="container mt-4 mb-5">
+        <h1 class="title text-center mb-4">Como começar</h1>
+        <div class="row justify-content-center">
+            <div class="col-lg-12 col-12 mb-0">
+                <div class="container-information d-flex justify-content-center">
+                    <h3 class="action active-information">Planeje sua grade curriculuar</h3>
+                    <h3 class="action">Grave seu vídeo</h3>
+                    <h3 class="action">Lance seu curso</h3>
+                </div>
+
+                <div class="container-curricular ms-5 mb-0">
+                    <div class="content">
+                        <div class="container-description">
+                            <p class="fs-5">Comece com o que você ama e conhece. Depois, escolha um tema promissor com a ajuda da nossa ferramenta Marketplace Insights.</p>
+                            <p class="fs-5">A maneira como você ensina — o seu toque especial — fica a seu critério.</p>
+                            <p class="fw-bold fs-5">Como ajudamos você</p>
+                            <p class="fs-5">Oferecemos muitos recursos sobre como criar seu primeiro curso. Além disso, o painel do instrutor e as páginas de grade curricular ajudam você a manter a organização.</p>
+                        </div>
+                        <img src="{% static 'images/image-curricular.webp' %}" alt="curricular">
+                    </div>             
+                </div>
+
+                <div class="container-video ms-5 mb-0">
+                    <div class="content">
+                        <div class="container-description">
+                            <p class="fs-5">Use ferramentas básicas, como um smartphone ou uma câmera DSLR. Providencie um bom microfone e você já pode começar.</p>
+                            <p class="fs-5">Se você não gosta de aparecer na câmera, basta capturar sua tela. Seja como for, recomendamos ter pelo menos duas horas de vídeo para um curso pago.</p>
+                            <p class="fw-bold fs-5">Como ajudamos você</p>
+                            <p class="fs-5">Nossa equipe de suporte está à disposição para ajudar você no processo e oferecer feedback dos vídeos de teste.</p>
+                        </div>
+                        <img src="{% static 'images/image-video.webp' %}" alt="video">
+                    </div>                 
+                </div>
+
+                <div class="container-course ms-5 mb-0">
+                    <div class="content">
+                        <div class="container-description">
+                            <p class="fs-5">Promova seu curso em mídias sociais e redes profissionais para receber suas primeiras classificações e avaliações.</p>
+                            <p class="fs-5">Seu curso poderá ser encontrado no nosso marketplace, onde você vai gerar receita com cada inscrição paga.</p>
+                            <p class="fw-bold fs-5">Como ajudamos você</p>
+                            <p class="fs-5">Nossa ferramenta de cupom personalizado permite oferecer incentivos à inscrição, enquanto nossas promoções globais geram tráfego nos cursos. Existem ainda mais oportunidades para os cursos escolhidos para a Udemy Business.
+    
+                            </p>
+                        </div>
+                        <img src="{% static 'images/image-course.webp' %}" alt="curso">
+                    </div>                   
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid mb-5" style="background-color: whitesmoke;">
+        <div id="carouselExampleControls" class="carousel slide text-center" data-bs-ride="carousel"  style="margin: 0 auto;">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="geral d-flex justify-content-center align-items-center container-carousel">
+                    <div class="col-md-4">
+                        <img src="{% static 'images/image1.webp' %}" width="400px" height="400px" alt="...">
+                    </div>
+                   
+                    <div class="information">
+                        <h2 class="ms-4 text-center">« Com os meus cursos na Udemy tenho a possibilidade de impactar positivamente a vida de milhares de alunos no Brasil e no mundo. Isso permitiu que eu largasse meu emprego para trabalhar todos os dias com o que eu realmente amo. »</h2>
+                        <p class="mb-0 text-center fs-5 ms-4 fw-bold">Diego Davila</p>
+                        <p class="text-center fs-5 secondary ms-4">Marketing Online</p>
+                    </div>
+                </div>    
+              </div>
+              <div class="carousel-item">
+                <div class="row d-flex justify-content-center align-items-center container-carousel">
+                    <div class="col-md-4">
+                        <img src="{% static 'images/image2.webp' %}" width="400px" height="400px" alt="...">
+                    </div>
+                    <div class="information">
+                        <h2 class="ms-4 text-center">« Ensino na Udemy pois desfruto da liberdade de trabalhar de qualquer lugar, e dedicar o meu tempo livre a outras atividades. Tenho orgulho de trabalhar com o que amo e do impacto que meus cursos geram em inúmeros alunos. »</h2>
+                        <p class="mb-0 text-center fs-5 ms-4 fw-bold">Felipe Mafra</p>
+                        <p class="text-center fs-5 secondary ms-4">Análise de Dados</p>
+                    </div>
+                </div>    
+              </div>
+
+              <div class="carousel-item">
+                <div class="row d-flex justify-content-center align-items-center container-carousel">
+                    <div class="col-md-4">  
+                          <img src="{% static 'images/image3.webp' %}" width="400px" height="400px" alt="...">
+                    </div>
+                    <div class="information">
+                        <h2 class="text-center">« Comecei na Udemy como um 'hobby' e, com o passar do tempo, consegui transformá-lo em uma profissão, e agora meu foco total é na Udemy. A liberdade que conquistei só foi possível porque na Udemy pude chegar em públicos que sozinha não teria a capacidade de atingir. »</h2>
+                        <p class="mb-0 text-center  fw-bold">Pilar Sanchez Albaladejo</p>
+                        <p class="text-center">Gestão de Projetos & Agile</p>
+                    </div>
+                </div>                  
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </div>
+
+    <div class="container-fluid d-flex mb-5">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-3">
+                <img src="{% static 'images/support1.webp' %}" alt="" width="400px" height="400px">
+            </div>
+
+            <div class="col-md-6 col-12">
+                <div class="data text-center">
+                    <h1 class="text-center">Você contará com ajuda</h1>
+                    <p class="fs-4">Nossa <b>equipe de Suporte ao Instrutor</b> está à disposição para tirar suas dúvidas e avaliar seu vídeo de teste, enquanto nosso <b>Teaching Center</b> oferece diversos recursos que ajudarão você no processo. Além disso, tenha o suporte de instrutores experientes na nossa <b>comunidade online.</b></p>
+                    <a href="#" class="fs-6 fw-bold w-50">Precisa de mais detalhes antes de começar? Saiba mais.</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <img src="{% static 'images/support2.webp' %}" alt="" width="400px" height="400px">
+        </div>
+    </div>
+
+    <div class="container-fluid mt-5 p-5" style="background-color: whitesmoke;">
+        <h1 class="text-center">Torne-se um instrutor hoje</h1>
+        <div class="data-instrutor text-center" style="margin: 0 auto;">
+            <p class="fs-4">Junte-se a um dos maiores marketplaces de aprendizado online do mundo.</p>
+            <a href="" class="btn btn-primary btn-teach w-75">Começar agora</a>
+        </div>
+    </div>
+{% endblock %}

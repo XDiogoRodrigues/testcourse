@@ -1,0 +1,27 @@
+{% load static %}
+<div class="container-fluid container-desktop p-3 ">
+    <a href="{% url 'home' %}"><img src="{% static 'images/logo-udemy.svg' %}" alt="logo-udemy" width="90px" height="50px" class=" ms-3"></a>
+    <div class="actions-login d-flex align-items-center mt-2">
+        <a href="{% url 'teach' %}" class="text-decoration-none text-dark me-3 fs-6">Ensine na Udemy</a>
+        {% if quantity_cart > 0 %}
+            <a href="{% url 'cart' %}" class="text-decoration-none text-dark fs-4"><i class="bi bi-cart3 fs-4 me-3" style="color:rgb(110, 46, 150);">{{quantity_cart}}</i></a>
+        {% else %}
+        <a href="{% url 'cart' %}" class="text-decoration-none text-dark fs-4"><i class="bi bi-cart3 fs-4 me-3" style="color:rgb(110, 46, 150)"></i></a>
+        {% endif %}
+
+        
+        <a href="{% url 'login' %}" class="btn me-3">Fazer login</a>
+        <a href="{% url 'register' %}" class="btn me-2">Cadastre-se</a>
+    </div>
+</div>
+
+<div class="container-fluid container-mobile">
+    <i class="bi bi-list fs-1" style="cursor: pointer;"></i>
+    <a href="{% url 'home' %}"><img src="{% static 'images/logo-udemy.svg' %}" alt="logo-udemy" class=" d-block" width="90px" height="60px"></a>
+    
+    <div class="actions">
+        <a href="{% url 'login' %}"><i class="bi bi-person-fill fs-1 me-2 text-dark"></i></a>
+        <a href="{% url 'cart' %}" class="text-decoration-none text-dark fs-4"><i class="bi bi-cart3 fs-1" style="color:rgb(110, 46, 150)">{{quantity_cart}}</i></a>
+    </div>
+
+</div>

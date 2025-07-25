@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block style %}<link rel="stylesheet" href="{% static 'css/styles-courses.css' %}">{% endblock %}
+{% block media_query %}<link rel="stylesheet" href="{% static 'css/medias-query-courses.css' %}">{% endblock %}
+{% block script %} <script src="{% static 'js/script-courses.js' %}" defer></script>{% endblock %}
+{% block content %}
+    {% include 'nav_header.html' %}
+    {% include 'ap_courses/header.html' %}
+    {% include 'ap_courses/menu.html'%}
+    <div class="container">
+        <h1 class="text-center mb-5 mt-4 pt-2 pb-2 rounded-3">{{ search }} <i class="bi bi-search"></i></h1>
+        <div class="row justify-content-center">
+            {% for course in courses %}
+                <div class="col-md-10 col-11">
+                    <div class="container-content mb-4 border-bottom border-1">
+                        <a href="{% url 'detail' course.slug %}" class="text-decoration-none text-dark pt-2 pb-2 pe-3 ps-3 d-flex flex-md-row align-items-center flex-column link-primary" target="_blank">
+                            <img src="{{course.image.url}}" alt="{{course.name}}" width="130px" height="130px">
+                            <div class="container-data ms-4 ">
+                                <h4 class="mb-1">{{course.name}}</h4>
+                                <p class="fw-bold fs-5 mb-1">{{course.description_short}}</p>
+                                <p class=" mb-1">Nível: {{course.level}}</p>
+                                <p class=" mb-1">Professor: {{course.name_teacher}}</p>                                   
+                            </div>           
+                            <p class="fs-4 fw-bold mb-1 flex-grow-1 text-end align-self-center">R${{course.price}}</p>                 
+                        </a>
+                        <div class="container-actions pb-3 ps-5">
+                            <a href="#" class="btn btn-success me-1 btn-buy">Comprar</a>
+                            <a href="{% url 'add' course.id %}" class="btn btn-primary"><i class="bi bi-cart"></i> Adicionar no carrinho</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

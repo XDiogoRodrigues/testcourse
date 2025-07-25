@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}<link rel="stylesheet" href="{% static 'css/styles-courses.css' %}">{% endblock %}
+{% block media_query %}<link rel="stylesheet" href="{% static 'css/medias-query-courses.css' %}">{% endblock %}
+{% block script %} <script src="{% static 'js/script-courses.js' %}" defer></script>{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-11">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <fieldset>
+                        <legend class="text-center">Cadastro de uma Sub-Categoria</legend>
+                        {% for message in messages %}
+                            {% if message.level == 25 %}
+                                <div class="alert alert-success alert-dismissible fade show fs-5 mt-3 text-center" role="alert">
+                                    <p class="fs-5 mt-3 text-center">{{message}}</p>
+                                    <button class="btn-close" data-bs-dismiss="alert"></button>
+                                </div>
+                            {% else %}
+                                <div class="alert alert-danger alert-dismissible fade show fs-5 mt-3 text-center" role="alert">
+                                    <p class="fs-5 mt-3 text-center">{{ message}}</p>
+                                    <button class="btn-close" data-bs-dismiss="alert"></button>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+
+                        <label for="name" class="form-label fw-bold">Nome</label>
+                        <input type="text" name="name" id="name" class="form-control mb-3">
+
+                        <label for="category" class="form-label fw-bold fs-5 ">Qual Categoria?</label>
+                        <select class="form-select mb-3" name="category" aria-label="Default select example">
+                            <option selected>Menu de Categoria</option>
+                            {% for category in categories %}
+                                <option value="{{category}}">{{category.name}}</option>
+                            {% endfor %}
+                        </select>
+
+                        <input type="submit" value="Cadastrar" class="btn btn-primary">
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
